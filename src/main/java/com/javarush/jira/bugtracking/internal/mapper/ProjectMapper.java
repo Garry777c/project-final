@@ -5,10 +5,12 @@ import com.javarush.jira.bugtracking.to.ProjectTo;
 import com.javarush.jira.common.BaseMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.List;
 
+@Component
 @Mapper(componentModel = "spring")
 public interface ProjectMapper extends BaseMapper<Project, ProjectTo> {
 
