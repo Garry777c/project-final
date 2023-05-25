@@ -1,0 +1,14 @@
+spring_datasource_url: jdbc:postgresql://localhost:5432/jira
+spring_datasource_username: jira
+spring_datasource_password: JiraRush
+
+
+gitlab_authorization-uri: https://gitlab.com/oauth/authorize
+gitlab_token-uri: https://gitlab.com/oauth/token
+gitlab_user-info-uri: https://gitlab.com/api/v4/user
+gitlab_user-name-attribute: email
+
+jira4jr_host: smtp.gmail.com
+jira4jr_username: jira4jr@gmail.com
+jira4jr_password: zdfzsrqvgimldzyj
+jira4jr_port: 587

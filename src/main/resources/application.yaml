@@ -12,9 +12,12 @@ spring:
     show-sql: true
     open-in-view: false
 
+  config:
+    import: extra-properties.yaml
+
 # validate db by model
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
 
     properties:
       #  http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#configurations
@@ -23,10 +26,11 @@ spring:
         default_batch_fetch_size: 20
         # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
         jdbc.batch_size: 20
+
   datasource:
-    url: ${spring.datasource.url}
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}
+    url: ${spring_datasource_url}
+    username: ${spring_datasource_username}
+    password: ${spring_datasource_password}
 
   liquibase:
     changeLog: "classpath:db/changelog.sql"
@@ -68,10 +72,10 @@ spring:
             scope: read_user
         provider:
           gitlab:
-            authorization-uri: ${spring.gitlab.authorization-uri}
-            token-uri: ${spring.gitlab.token-uri}
-            user-info-uri: ${spring.gitlab.user-info-uri}
-            user-name-attribute: ${spring.gitlab.user-name-attribute}
+            authorization-uri: ${gitlab_authorization-uri}
+            token-uri: ${gitlab_token-uri}
+            user-info-uri: ${gitlab_user-info-uri}
+            user-name-attribute: ${gitlab_user-name-attribute}
 
   sql:
     init:
@@ -84,10 +88,10 @@ spring:
           starttls:
             enable: true
           auth: true
-    host: ${jira4jr.host}
-    username: ${jira4jr.username}
-    password: ${jira4jr.password}
-    port: ${jira4jr.port}
+    host: ${jira4jr_host}
+    username: ${jira4jr_username}
+    password: ${jira4jr_password}
+    port: ${jira4jr_port}
   thymeleaf.check-template-location: false
 
 logging:
