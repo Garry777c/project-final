@@ -27,5 +27,6 @@
 2. Removed/deleted social networks: vk, yandex. -Done
 3. Moved all sensitive info (logins, passwords, authentication, mail settings) into separate property file. Environmental variables. -Done
 4. Changed test to use H@ in memory DB. -Done
-5. Created test for all public methods in ProfileRestController
-6. Adding tags to tasks. No front.
+5. Created test for all public methods in ProfileRestController. -Done
+6. Adding tags to tasks. No front. -Done
+7. Adding tasks subscribe option to current user. -Done
