@@ -4,6 +4,8 @@ import com.javarush.jira.bugtracking.internal.mapper.TaskMapper;
 import com.javarush.jira.bugtracking.internal.model.Task;
 import com.javarush.jira.bugtracking.internal.repository.TaskRepository;
 import com.javarush.jira.bugtracking.to.TaskTo;
+import jakarta.validation.constraints.Size;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,18 +21,12 @@ public class TaskService extends BugtrackingService<Task, TaskTo, TaskRepository
         return mapper.toToList(repository.getAll());
     }
 
-    public void addTag(long taskId, String tag){
+    public void addTagToTask(long taskId, Set <@Length(min=2, max=32) String> tags){
         Task task = repository.getExisted(taskId);
         Set <String> setOfTags = task.getTags();
-        if(setOfTags.isEmpty() || setOfTags.contains(tag)) {
-            validateTags(tag, 2, 32, setOfTags);
+        if(!setOfTags.isEmpty()) {
+            task.getTags().addAll(tags);
             repository.save(task);
-        }
-    }
-
-    public void validateTags(String tag, int min, int max, Set<String> setOfTags){
-        if(tag.length()>=min && tag.length()<=max) {
-            setOfTags.add(tag);
         }
     }
 }
