@@ -189,7 +189,6 @@ values (0, 1),
        (1, 2),
        (0, 2);
 
-
 --============ References =================
 insert into REFERENCE (CODE, TITLE, REF_TYPE)
 -- TASK
