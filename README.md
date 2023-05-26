@@ -30,3 +30,5 @@
 5. Created test for all public methods in ProfileRestController. -Done
 6. Adding tags to tasks. No front. -Done
 7. Adding tasks subscribe option to current user. -Done
+8. Not done
+9. Added Dockerfile for main server. -Done
